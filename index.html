@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBTA Atenógenes</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background-color: white;
+    }
+
+    .encabezado {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      padding: 20px;
+      background-color: white;
+      flex-wrap: wrap;
+    }
+
+    .encabezado img {
+      height: 80px;
+      margin-right: 20px;
+    }
+
+    .titulo-texto h1 {
+      margin: 0;
+      font-size: 20px;
+      color: #04248f;
+      text-align: left;
+    }
+
+    .titulo-texto h2 {
+      margin: 5px 0 0 0;
+      font-size: 16px;
+      color: #2837bb;
+      text-align: left;
+    }
+
+    nav {
+      background-color: #ddd7c5;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      padding: 10px 0;
+      margin: 0;
+      gap: 15px;
+    }
+
+    .menu li {
+      position: relative;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #a33624;
+      padding: 10px 15px;
+      display: block;
+      border-radius: 6px;
+    }
+
+    .menu a:hover {
+      background-color: #c5bba0;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #eee7d0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      min-width: 150px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .submenu li a {
+      padding: 10px;
+    }
+
+    .menu li:hover .submenu {
+      display: block;
+    }
+
+    .contenido {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 30px;
+    }
+
+    .columna-izquerda, .columna-imagenes {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+    }
+
+    .columna-izquerda {
+      background-color: #f5e8d8;
+      text-align: justify;
+    }
+
+    .columna-imagenes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .imagen-hover {
+      width: 100%;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+      border-radius: 12px;
+    }
+
+    .imagen-hover:hover {
+      transform: scale(1.05);
+    }
+
+    /* Marquesina */
+    .marquesina {
+      width: 100%;
+      max-width: 800px;
+      margin: 40px auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+    .marquesina img {
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+
+    .marquesina img.active {
+      display: block;
+    }
+
+    .barra-tiempo {
+      height: 5px;
+      background-color: #7a3e20;
+      width: 0%;
+      transition: width 3s linear;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contenido {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="encabezado">
+    <img src="logo-apys.jpg" alt="Escudo CBTA">
+    <div class="titulo-texto">
+      <h1>CENTRO DE BACHILLERATO TECNOLÓGICO ADMINISTRATIVO</h1>
+      <h2>"ATENÓGENES PÉREZ Y SOTO"</h2>
+    </div>
+  </div>
+
+  <nav>
+    <ul class="menu">
+      <li><a href="Pagina-apys2.html">Inicio</a></li>
+      <li>
+        <a href="#">Comunidad</a>
+        <ul class="submenu">
+          <li><a href="docentes.html">Docentes</a></li>
+          <li><a href="Administrativo.html">Administrativo</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Especialidades</a>
+        <ul class="submenu">
+          <li><a href="Computacion.html">Computación</a></li>
+          <li><a href="trabajoSocial.html">Trabajo Social</a></li>
+          <li><a href="Contabilidad.html">Contabilidad</a></li>
+        </ul>
+      </li>
+      <li> 
+        <a href="#">Conócenos</a>
+        <ul class="submenu">
+          <li><a href="inscripciones.html">Inscripciones</a></li>
+          <li><a href="#">Acerca de Nosotros</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Info</a>
+        <ul class="submenu">
+          <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+          <li><a href="https://www.google.com/maps" target="_blank">Ubicación</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Marquesina de imágenes -->
+  <div class="marquesina">
+    <img src="event1.jpg" class="active">
+    <img src="aul.jpg">
+    <img src="evento2.jpg">
+    <div class="barra-tiempo" id="barra"></div>
+  </div>
+
+  <section class="contenido">
+    <div class="columna-izquerda">
+      <h2 style="text-align: center;">MISIÓN</h2>
+      <p>Ser una Institución educativa nivel técnico medio superior que muestre preparación de excelencia, que responda plenamente a las necesidades de la sociedad, con un alto sentido de responsabilidad. Que proporcione una formación integral y pertinente de acuerdo a las exigencias derivadas de la competitividad mundial, al entorno y vocación local, además de tener la flexibilidad para satisfacer los intereses, aspiraciones y posibilidades de la población que demanda este nivel educativo en nuestros diferentes planteles.</p>
+      <br><br>
+      <h2 style="text-align: center;">VISIÓN</h2>
+      <p>Ofrecer a la población Estudiantil, servicios educativos de excelencia académica basadas en los programas de la secretaria de educación pública, con la finalidad de formar técnicos profesionales competitivos que puedan incorporarse a Instituciones públicas y privadas. Formando así, ciudadanos con las habilidades, conocimientos y actitudes requeridas para propiciar y participar en una sociedad, tanto en el aspecto laboral como social y en diferentes ámbitos de nuestra vida.  Lo anterior en un contexto de equidad, flexibilidad, integralidad y apertura, que coadyuve a satisfacer las necesidades sociales y económicas del país.</p>
+    </div>
+    
+    <div class="columna-imagenes">
+      <img src="evento1.jpg" class="imagen-hover">
+      <img src="aula1.jpg" class="imagen-hover">
+    </div>
+  </section>
+
+  <script>
+    const imagenes = document.querySelectorAll('.marquesina img');
+    const barra = document.getElementById('barra');
+    let index = 0;
+
+    function mostrarSiguienteImagen() {
+      imagenes[index].classList.remove('active');
+      index = (index + 1) % imagenes.length;
+      imagenes[index].classList.add('active');
+      barra.style.transition = 'none';
+      barra.style.width = '0%';
+      setTimeout(() => {
+        barra.style.transition = 'width 3s linear';
+        barra.style.width = '100%';
+      }, 50);
+    }
+
+    setInterval(mostrarSiguienteImagen, 4000); // cada 4 segundos
+    barra.style.width = '100%'; // inicial
+  </script>
+</body>
+</html>

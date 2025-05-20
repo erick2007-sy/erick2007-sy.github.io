@@ -1,0 +1,199 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscripciones</title>
+  <style>
+        nav {
+  background-color: #ddd7c5;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #a33624;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 6px;
+}
+
+.menu a:hover {
+  background-color: #c5bba0;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #eee7d0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 150px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.submenu li a {
+  padding: 10px;
+}
+
+.menu li:hover .submenu {
+  display: block;
+}
+
+/* Opcional: para que sea responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+  }
+}
+
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #d36b6b;
+    }
+
+    .contenido {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+    }
+
+    .texto {
+      text-align: left;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .columna-info {
+      margin-top: 30px;
+      background-color: #fceeee;
+      padding: 15px;
+      border-left: 5px solid #d36b6b;
+      box-sizing: border-box;
+    }
+
+    .columna-info h3 {
+      margin-top: 0;
+      color: #a33c3c;
+    }
+
+    .columna-info ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .galeria img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .galeria img:hover {
+      transform: scale(1.08);
+    }
+  </style>
+<center><h2> INSCRIPCIONES </h2></center>
+
+  <nav>
+  <ul class="menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li>
+      <a href="#">Comunidad</a>
+      <ul class="submenu">
+        <li><a href="docentes.html">Docentes</a></li>
+        <li><a href="Administrativo.html">Administrativo</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Especialidades</a>
+      <ul class="submenu">
+        <li><a href="Computacion.html">Computación</a></li>
+        <li><a href="trabajoSocial.html">Trabajo Social</a></li>
+        <li><a href="Contabilidad.html">Contabilidad</a></li>
+      </ul>
+    </li>
+    <li> 
+      <a href="#">Conócenos</a>
+      <ul class="submenu">
+        <li><a href="inscripciones.html">Inscripciones</a></li>
+        <li><a href="#">Acerca de Nosotros</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Info</a>
+      <ul class="submenu">
+        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.google.com/maps" target="_blank">Ubicación</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    
+
+  <div class="contenido">
+    <p> aun nos falta informacion</p>
+  </div>
+
+  <div class="galeria">
+        <img src="docente1.jpg" alt="Docente 1">
+        <img src="docente2.jpg" alt="Docente 2">
+        <img src="docente3.jpg" alt="Docente 3">
+        <img src="docente4.jpg" alt="Docente 4">
+        <img src="docente5.jpg" alt="Docente 5">
+        <!-- Puedes agregar más imágenes aquí -->
+      </div>
